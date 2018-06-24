@@ -43,7 +43,6 @@ class SearchBook extends Component {
     if (query.length !== 0) {
       BooksAPI.search(query, 20).then(books => {
         if (books.length > 0) {
-          // books = books.filter(book => book.imageLinks);
           books = this.findShelf(books);
           this.setState({ bookSearchResults: books });
         }
